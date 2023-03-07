@@ -13,7 +13,7 @@ namespace SoccerLeague.Helpers
 
         public static bool IsInputAFilePath(string input)
         {
-            return false;
+            return File.Exists(input);
         }
 
         //------------------------------------------------------------------
