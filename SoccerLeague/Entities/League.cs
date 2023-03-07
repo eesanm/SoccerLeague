@@ -26,19 +26,19 @@ namespace SoccerLeague.Entities
             }
         }
 
-        private Dictionary<string, int> m_points = new Dictionary<string, int>();
+        private Dictionary<string, int> _points = new Dictionary<string, int>();
 
         //--------------------------------------------------------------------------------------
 
         private void AddPointsForTeam( string teamName, int point )
         {
-            if( m_points.ContainsKey( teamName ))
+            if( _points.ContainsKey( teamName ))
             {
-                m_points[teamName] += point;
+                _points[teamName] += point;
             }
             else
             {
-                m_points.Add( teamName, point );
+                _points.Add( teamName, point );
             }            
         }
 
@@ -46,7 +46,7 @@ namespace SoccerLeague.Entities
 
         public List<KeyValuePair<string, int>> GetLeague()
         {
-            List<KeyValuePair<string, int>> list = m_points.ToList();
+            List<KeyValuePair<string, int>> list = _points.ToList();
             list.Sort(new TeamComparer());
 
             return list;

@@ -55,5 +55,6 @@ var fullPoints = league.GetLeague();
 Console.WriteLine("\n\r----------------------------------");
 
 fullPoints.ForEach((item) => { Console.WriteLine($"{item.Key}, {item.Value} pt(s)") ; });
-
+DatabaseService.PersistLeague(league);
+               
 Console.WriteLine("----------------------------------\n\r");
